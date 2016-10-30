@@ -81,5 +81,22 @@ If you really look into it, it's not that complicated. We're still using `http.c
 
 Oh, of course! When calling `response.end()`, we can pass a message or file as parameter. Similar to `response.write('message')` and then calling the `end()` function.
 
+It ain't over yet. We need to write that `index.html` file. It can be ANY HTML file, as long as the filename is `index`. To keep the hello-world spirit, I wrote something like this:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example Page</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <p>This is an example page.</p>
+    </body>
+</html>
+```
+
+Save it in the same folder as `server.js`. Now browse to `localhost:8000` and, well, you know...
 
 
