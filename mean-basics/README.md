@@ -35,3 +35,51 @@ Save the script on `server.js` and run it on Command Prompt or Terminal by writi
 
 To test the server, browse to `localhost:8000` and be amazed by the awesome `Hello World!` message.
 
+## Step-1: Slightly More Sophisticated Hello World
+
+Before moving on to Express.js, I found this great [Express.js Crash Course](https://www.youtube.com/watch?v=aHqnFWLP7wA&t=658s "YouTube video: Express.js Crash Course") on YouTube. Express.js provides a thin layer on top of the http module, making it easier to use and more powerful -- like libraries usually do.
+
+The sophistication, however, is: so far we made the server respond with a message. How about a server that responds a `index.html` file? Let's dive into it!
+
+Modify `server.js` to look like this:
+
+```javascript
+var http = require('http'),
+    fs = require('fs'),
+    path = require('path');
+
+var app = http.createServer((request, response) => {
+    // Finds index.html file inside the root folder
+    var index = path.join(__dirname, 'index.html');
+
+    if (request.url == '/' || request.url == '/index.html') {        
+        fs.readFile(index, function(err, data) {
+            if (err) {
+                console.error(err);
+                response.writeHead(500, {'Content-Type': 'text/html'});
+                response.end('500 Server Error');
+            } else {
+                response.writeHead(200, {'Content-Type': 'text/html'});
+                response.end(data);
+            }
+        });
+    } else {
+        // If request url is something different than the root folder
+        console.log('Resource not found: ' + request.url);
+        response.writeHead(404, {'Content-Type': 'text/html'});
+        response.end('404 Page Not Found');
+    }
+
+});
+
+app.listen(8000, 'localhost');
+
+console.log('Listening on port 8000...');
+```
+
+If you really look into it, it's not that complicated. We're still using `http.createServer`, but instead of simply writing a `Hello World!` message, we look for file `index.html` that sits on the `/` root folder. For that we `require` the `fs` (filesystem) and the `path` modules. The rest is pretty intuitive.
+
+Oh, of course! When calling `response.end()`, we can pass a message or file as parameter. Similar to `response.write('message')` and then calling the `end()` function.
+
+
+
