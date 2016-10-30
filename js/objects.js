@@ -66,5 +66,22 @@
 
     var employeeWithConstructor = new employeeConstructor("Jack", "Bauer", new Date(1975, 10, 28), new Date(2001, 7, 19), true);
     employeeWithConstructor.display();
+
+    // Possibly the best approach
+    var newEmployeeConstructor = function(firstname, lastname, birthdate, admissionDate, hasChildren) {
+        return {
+            firstname: firstname,
+            lastname: lastname,
+            birthdate: birthdate,
+            admissionDate: admissionDate,
+            hasChildren, hasChildren,
+            display: function() { 
+                console.log(this);
+            }
+        }
+    }
+
+    var employeeWithNewConstructor = newEmployeeConstructor("John", "Doe", new Date(1980, 9, 20), new Date(2000, 12, 15), true);
+    employeeWithNewConstructor.display();
     
 })();
