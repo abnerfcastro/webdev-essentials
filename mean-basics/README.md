@@ -1,5 +1,5 @@
 # mean-basics
-Basic MEAN stack contact list.
+Basic MEAN stack contact list app.
 
 ## Step-0: The Very Basics
 
@@ -98,5 +98,43 @@ It ain't over yet. We need to write that `index.html` file. It can be ANY HTML f
 ```
 
 Save it in the same folder as `server.js`. Now browse to `localhost:8000` and, well, you know...
+
+## Step-2: Hello World in Express.js
+
+> [Express.js](http://expressjs.com/ "Express.js website"): Fast, unopinionated, minimalist web framework for Node.js
+
+Now we will write a `hello-world` example in Express.js. It is supposed to simplify but yet enhance Node.js `http` module.
+
+Before just jumping into Express.js itself, we need to install it. From now on, let it be clear that Express.js is not part of Node, we need to import/install it on our project's directory folder. The easiest way to do that is through the command prompt. Start it and browse to your `server.js` root folder and type `npm install express`. `npm` is a package manager that comes along with Node.js installation. By typing that command, `npm` will intall Express.js on a folder called `node_modules`. We call that your project's dependencies, and a project can have many dependencies. If you had to `npm install` each one of them every time you needed to install your project (we don't usually commit `node_modules` folder... it goes to `.gitignore`), it would be time consuming and you'd have to keep a list of your dependencies, right?
+
+In that scenario, file `package.json` comes to the rescue. It's a file that holds every information about your project, including its dependencies. Better yet, when you have such file that lists all of your dependencies, you simply type `npm install` once, and it will install everything on `node_modules` folder. 'Nough talking, let's create our `package.json` file!
+
+This is the skeleton of `package.json`:
+
+```json
+{
+    "name": "mean-basics",
+    "description": "Basic MEAN stack contact list app.",
+    "version": "1.0.0",
+    "author": {
+        "name": "Abner Castro"
+    },
+    "scripts": {
+        "prestart": "npm install",
+        "start": "node server.js"
+    },
+    "dependencies": {
+    }
+}
+```
+
+We can manually add `"express": "^4.14.0"` inside `dependencies` or type in command prompt `npm install express --save`. With `--save`, `npm` will add Express.js to the list of your dependencies in `package.json`.
+
+One of the coolest things about `package.json` is that we can setup states like `prestart` and `start`. That way, if none of the dependencies are installed on `node_modules`, when you type `npm start`, it will automatically download everything you need for the project to run. Well, everything you listed as a dependency, at least...
+
+Now we are ready to import... I mean, `require` Express.js to our project. Modify `server.js` to:
+
+```
+```
 
 
