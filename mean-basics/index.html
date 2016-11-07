@@ -4,39 +4,48 @@
 <head>
 	<title>Example Page</title>
 	<meta charset="utf-8">
-	<style>
-		body {
-			padding: 40px;
-			font-family: 'Trebuchet MS', sans-serif;
-		}
-        .data-card {
-            background: #EEEEEE;
-            width: 80%;
-            padding: 5px 20px;
-            margin: 20px 0px;
-            font-size: .9em;
-        }
-        .data-card p {
-            margin: 5px 0px;
-        }
-	</style>
+    <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">	
 </head>
 
-<body ng-controller="SimpleCtrl">
-	<h1>Hello World!</h1>
-	<p>This is an example page. Click on <b>Request Data</b> to retrieve some data from the server.</p>
+<body>
+	
+    <div class="container"  ng-controller="SimpleCtrl">
+        <h1>Contact List App</h1>
 
-    <button ng-click="requestData()">Request Data</button>
-
-    <div class="data-card" ng-hide="data == ''" ng-repeat="character in data">
-        <p><strong>Name: </strong><span>{{character.name}}</span></p>
-        <p><strong>Email: </strong><span>{{character.email}}</span></p>
-        <p><strong>Phone: </strong><span>{{character.phone}}</span></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+					<td><input type="text" class="form-control" ng-model="contact.name"></td>
+					<td><input type="text" class="form-control" ng-model="contact.email"></td>
+					<td><input type="text" class="form-control" ng-model="contact.phone"></td>
+					<td><button class="btn btn-primary" ng-click="add()">Add Contact</button></td>
+					<!--<td><button class="btn btn-info" ng-click="update()">Update</button>-->
+                        <!--<button class="btn btn-info" ng-click="deselect()">Clear</button>-->
+                    </td>
+				</tr>
+                <tr ng-repeat="character in data">
+                    <td>{{character.name}}</td>
+                    <td>{{character.email}}</td>
+                    <td>{{character.phone}}</td>                
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 	<!-- AngularJS files -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="SimpleCtrl.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="bower_components\jquery\dist\jquery.js"></script>
+	<script src="bower_components\bootstrap\dist\js\bootstrap.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+{
+  "name": "mean-basics",
+  "description": "Basic MEAN stack contact list app.",
+  "license": "MIT",
+  "homepage": "https://github.com/abnerfcastro/webdev-essentials",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
