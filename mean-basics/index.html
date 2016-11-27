@@ -4,40 +4,56 @@
 <head>
 	<title>Example Page</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">	
+	<link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">
+	<style>
+		.action {
+			width: 25%;
+		}
+		
+		.table td {
+			height: 52px;
+			width: 52px;
+			vertical-align: middle;
+		}		
+	</style>
 </head>
 
 <body>
-	
-    <div class="container"  ng-controller="SimpleCtrl">
-        <h1>Contact List App</h1>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+	<div class="container" ng-controller="SimpleCtrl">
+		<h1>Contact List App</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th class="action">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
 					<td><input type="text" class="form-control" ng-model="contact.name"></td>
 					<td><input type="text" class="form-control" ng-model="contact.email"></td>
 					<td><input type="text" class="form-control" ng-model="contact.phone"></td>
-					<td><button class="btn btn-primary" ng-click="add()">Add Contact</button></td>
+					<td><button class="btn btn-primary" ng-click="add()"><span class="glyphicon glyphicon-plus"></span>&nbsp Add Contact</button></td>
 					<!--<td><button class="btn btn-info" ng-click="update()">Update</button>-->
-                        <!--<button class="btn btn-info" ng-click="deselect()">Clear</button>-->
-                    </td>
+					<!--<button class="btn btn-info" ng-click="deselect()">Clear</button>-->
+					</td>
 				</tr>
-                <tr ng-repeat="character in data">
-                    <td>{{character.name}}</td>
-                    <td>{{character.email}}</td>
-                    <td>{{character.phone}}</td>                
-                </tr>
-            </tbody>
-        </table>
-    </div>
+				<tr ng-repeat="character in data" ng-mouseenter="options = true" ng-mouseleave="options = false">
+					<td>{{character.name}}</td>
+					<td>{{character.email}}</td>
+					<td>{{character.phone}}</td>
+					<td>
+						<button class="btn btn-danger" ng-click="remove(contact._id)" ng-show="options"><span class="glyphicon glyphicon-remove"></span>&nbsp Remove</button>
+						<button class="btn btn-warning" ng-click="edit(contact._id)" ng-show="options"><span class="glyphicon glyphicon-edit"></span>&nbsp Edit</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<!-- AngularJS files -->
 	<script src="bower_components/angular/angular.min.js"></script>
