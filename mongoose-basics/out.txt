@@ -1,0 +1,116 @@
+we are connected!
+Meow name is Grandpa
+Meow name is Fluffy
+collections:  Collection {
+  s: 
+   { pkFactory: 
+      { [Function: ObjectID]
+        index: 10579728,
+        createPk: [Function: createPk],
+        createFromTime: [Function: createFromTime],
+        createFromHexString: [Function: createFromHexString],
+        isValid: [Function: isValid],
+        ObjectID: [Circular],
+        ObjectId: [Circular] },
+     db: 
+      Db {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 6,
+        _maxListeners: undefined,
+        s: [Object],
+        serverConfig: [Getter],
+        bufferMaxEntries: [Getter],
+        databaseName: [Getter],
+        _listening: true },
+     topology: 
+      Server {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        clientInfo: [Object],
+        s: [Object] },
+     dbName: 'mongoose-basics',
+     options: 
+      { forceServerObjectId: false,
+        w: 1,
+        promiseLibrary: [Function: Promise] },
+     namespace: 'mongoose-basics.kittens',
+     readPreference: null,
+     slaveOk: false,
+     serializeFunctions: undefined,
+     raw: undefined,
+     promoteLongs: undefined,
+     promoteValues: undefined,
+     promoteBuffers: undefined,
+     internalHint: null,
+     collectionHint: null,
+     name: 'kittens',
+     promiseLibrary: [Function: Promise],
+     readConcern: undefined } }
+collections:  Db {
+  domain: null,
+  _events: 
+   { close: [Function],
+     error: [Function],
+     reconnect: [Function],
+     timeout: [Function],
+     open: [Function],
+     parseError: [Function] },
+  _eventsCount: 6,
+  _maxListeners: undefined,
+  s: 
+   { databaseName: 'mongoose-basics',
+     dbCache: {},
+     children: [],
+     topology: 
+      Server {
+        domain: null,
+        _events: [Object],
+        _eventsCount: 7,
+        _maxListeners: undefined,
+        clientInfo: [Object],
+        s: [Object] },
+     options: 
+      { forceServerObjectId: false,
+        w: 1,
+        promiseLibrary: [Function: Promise] },
+     logger: Logger { className: 'Db' },
+     bson: BSON {},
+     authSource: undefined,
+     readPreference: undefined,
+     bufferMaxEntries: -1,
+     parentDb: null,
+     pkFactory: undefined,
+     nativeParser: undefined,
+     promiseLibrary: [Function: Promise],
+     noListener: false,
+     readConcern: undefined },
+  serverConfig: [Getter],
+  bufferMaxEntries: [Getter],
+  databaseName: [Getter],
+  _listening: true }
+[ { _id: 5935e3e7c9570e05908ad03e, name: 'Fluffy', __v: 0 },
+  { _id: 5935e4a38bcd2e0ea0667c3b, name: 'Fluffy', __v: 0 },
+  { _id: 5935e6656ae0531a54815b9c, name: 'Fluffy', __v: 0 },
+  { _id: 5935e6dce9dc520cf4c38cf0, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7685820070e402a9bb4, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7a36822dc10fccc66d3, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7edde8fd919dc154aa2, name: 'Fluffy', __v: 0 } ]
+[ { _id: 5935e3e7c9570e05908ad03d, name: 'Grandpa', __v: 0 },
+  { _id: 5935e3e7c9570e05908ad03e, name: 'Fluffy', __v: 0 },
+  { _id: 5935e4a38bcd2e0ea0667c3a, name: 'Grandpa', __v: 0 },
+  { _id: 5935e4a38bcd2e0ea0667c3b, name: 'Fluffy', __v: 0 },
+  { _id: 5935e6656ae0531a54815b9b, name: 'Grandpa', __v: 0 },
+  { _id: 5935e6656ae0531a54815b9c, name: 'Fluffy', __v: 0 },
+  { _id: 5935e6dce9dc520cf4c38cef, name: 'Grandpa', __v: 0 },
+  { _id: 5935e6dce9dc520cf4c38cf0, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7685820070e402a9bb3, name: 'Grandpa', __v: 0 },
+  { _id: 5935e7685820070e402a9bb4, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7a36822dc10fccc66d2, name: 'Grandpa', __v: 0 },
+  { _id: 5935e7a36822dc10fccc66d3, name: 'Fluffy', __v: 0 },
+  { _id: 5935e7edde8fd919dc154aa1, name: 'Grandpa', __v: 0 },
+  { _id: 5935e7edde8fd919dc154aa2, name: 'Fluffy', __v: 0 } ]
+Meow name is Grandpa
+Meow name is Fluffy

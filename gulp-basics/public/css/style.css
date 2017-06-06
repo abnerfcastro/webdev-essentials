@@ -1,0 +1,17 @@
+
+/* This is a sample .css file that will be minified with gulp.js */
+
+* {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+body {
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    background-color: dimgray;
+}
