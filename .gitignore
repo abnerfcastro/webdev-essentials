@@ -1,2 +1,5 @@
 mean-basics/node_modules/
 mean-basics/bower_components/
+gulp-basics/node_modules
+mongoose-basics/node_modules
+browserify-basics/node_modules

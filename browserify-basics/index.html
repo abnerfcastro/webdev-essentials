@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simple.app">
+	<head>
+		<title>Sample App</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.ng-hide:not(.ng-hide-animate) {
+				display: block !important;
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body ng-controller="ExampleController">
+		<div ng-hide="vm.show" class="fx-zoom-normal">
+			<p>Animate this.</p>
+		</div>
+		<button type="button" ng-click="vm.show = !vm.show">Hide</button>
+		<script src="public/js/bundle.js"></script>
+	</body>
+</html>

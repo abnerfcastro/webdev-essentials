@@ -1,0 +1,30 @@
+{
+  "name": "browserify-basics",
+  "version": "1.0.0",
+  "description": "Learning how to use Browserify with Angular",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "browserify",
+    "angular"
+  ],
+  "author": "Abner Castro",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "ng-fx": "^2.0.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
