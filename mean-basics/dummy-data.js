@@ -20,6 +20,7 @@ var find = function(id, callback) {
 }
 
 var insert = function(object, callback) {
+    
     object._id = current_id;
     current_id++;
 
@@ -36,8 +37,47 @@ var insert = function(object, callback) {
     callback(err, object);
 }
 
+var remove = function(id, callback) {
+
+    var doc = database.find(contact => contact._id == id);
+    console.log(id);
+    var index = database.indexOf(doc);
+    var err;
+
+    if (index > -1) {
+        database.splice(index, 1);        
+    }
+    else {
+        err = 'Object was not found in the database.';
+        doc = null;        
+    }
+
+    callback(err, doc);
+}
+
+var update = function(object, callback) {    
+
+    var err;
+
+    for (var contact in database) {
+        if (contact._id == object._id) {
+            contact.name = object.name;
+            contact.email = object.email;
+            contact.phone = object.phone;
+            callback(err, contact);
+            return;
+        }
+    }
+
+    var err = 'Object was not found in the database';
+    callback(err, null);
+
+}
+
 module.exports = {
-    db: database,
+    values: database,
     find: find,
-    insert: insert
+    insert: insert,
+    remove: remove,
+    update: update
 } 

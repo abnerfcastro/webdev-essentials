@@ -21,7 +21,7 @@
 <body>
 
 	<div class="container" ng-controller="SimpleCtrl">
-		<h1>Contact List App</h1>
+		<h1>newContact List App</h1>
 
 		<table class="table">
 			<thead>
@@ -47,8 +47,8 @@
 					<td>{{character.email}}</td>
 					<td>{{character.phone}}</td>
 					<td>
-						<button class="btn btn-danger" ng-click="remove(contact._id)" ng-show="options"><span class="glyphicon glyphicon-remove"></span>&nbsp Remove</button>
-						<button class="btn btn-warning" ng-click="edit(contact._id)" ng-show="options"><span class="glyphicon glyphicon-edit"></span>&nbsp Edit</button>
+						<button class="btn btn-danger" ng-click="remove(character._id)" ng-show="options"><span class="glyphicon glyphicon-remove"></span>&nbsp Remove</button>
+						<button class="btn btn-warning" ng-click="edit(character._id)" ng-show="options"><span class="glyphicon glyphicon-edit"></span>&nbsp Edit</button>
 					</td>
 				</tr>
 			</tbody>

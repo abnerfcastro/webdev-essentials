@@ -21,7 +21,7 @@ app.get('/data', function(request, response) {
     //     console.log(doc);
     // });  
 
-    response.send(database.db);    
+    response.send(database.values);    
 });
 
 app.get('/data/:id', function(request, response) {
@@ -47,6 +47,25 @@ app.post('/data', function(request, response) {
         }
         else
         {
+            response.send(doc);
+        }
+    });
+});
+
+app.put('/data/:id', function(request, response) {
+    
+});
+
+app.delete('/data/:id', function(request, response) {
+    console.log('Just got a DELETE request. Attempting to delete data.');
+    var id = request.params.id;
+
+    database.remove(id, function(err, doc) {
+        if (err) {
+            console.error(err);
+            response.status(500).send("There was something wrong.");            
+        }
+        else {
             response.send(doc);
         }
     });
